@@ -3,7 +3,7 @@ from pathlib import Path
 import logging
 from PIL import Image
 
-# Configuration du logging
+# Logging configuration
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
@@ -11,20 +11,20 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 class SpriteConverter:
-    """Classe pour convertir des sprites en GIF animé."""
+    """Class for converting sprites to animated GIF."""
     
     def __init__(self, input_path: str):
         """
-        Initialise le convertisseur de sprite.
+        Initializes the sprite converter.
         
         Args:
-            input_path (str): Chemin vers le dossier contenant les sprites
+            input_path (str): Path to the directory containing the sprites
         """
         self.input_path = Path(input_path)
         if not self.input_path.exists():
-            raise FileNotFoundError(f"Le dossier {input_path} n'existe pas")
+            raise FileNotFoundError(f"The directory {input_path} does not exist")
         
-        logger.info(f"Convertisseur initialisé avec le dossier: {input_path}")
+        logger.info(f"Converter initialized with directory: {input_path}")
     
     def resize_sprite_sheet(self, target_size: int = 1020) -> Image.Image:
         """
