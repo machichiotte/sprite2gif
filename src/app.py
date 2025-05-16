@@ -1,5 +1,5 @@
 import streamlit as st
-from sprite_converter import SpriteConverter
+from .sprite_converter import SpriteConverter
 from pathlib import Path
 import tempfile
 import os
